@@ -1,4 +1,484 @@
+@charset "UTF-8";
+
+/* 変数宣言 */
+
+/* 変数宣言 */
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeinbg {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeinbg {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeinscroll {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeinscroll {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 body {
-  background-color: green;
+  background-color: #fefefe;
+  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  color: #202020;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+h2,
+h3 {
+  font-weight: 400;
+}
+
+p,
+span {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.logo_area {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+.logo {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 1.2em;
+  letter-spacing: 5px;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.logo.fade_out {
+  -webkit-animation-name: fadeout;
+          animation-name: fadeout;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.logo.none {
+  opacity: 0;
+}
+
+.bg_area {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  background-color: #f0e68c;
+  top: 50%;
+  left: 0;
+  opacity: 0.8;
+  -webkit-animation-name: fadeinbg;
+          animation-name: fadeinbg;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.scroll_icon {
+  position: fixed;
+  width: 100%;
+  bottom: 5%;
+  text-align: center;
+  z-index: 600;
+  -webkit-animation-name: fadeinscroll;
+          animation-name: fadeinscroll;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.scroll_icon.fade_out {
+  -webkit-animation-name: fadeout;
+          animation-name: fadeout;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.scroll_icon.none {
+  opacity: 0;
+}
+
+.scroll_icon .scroll_text {
+  color: #999359;
+  letter-spacing: 5px;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 1em;
+}
+
+.scroll_icon .lnr-chevron-down {
+  color: #999359;
+  font-size: 30px;
+}
+
+.nav_bar {
+  position: absolute;
+  bottom: 50%;
+  z-index: 400;
+}
+
+.nav_bar ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav_bar li {
+  margin: 0 16px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 400;
+}
+
+.content section {
+  margin-bottom: 6em;
+}
+
+.content .section_title {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.content .section_title h2 {
+  font-size: 1.2em;
+  letter-spacing: 5px;
+  margin-bottom: 0.5em;
+}
+
+.content .section_title p {
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  color: #333333;
+}
+
+.about_flex {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about_flex h3 {
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: 1em;
+}
+
+.about_flex span {
+  font-size: 0.8em;
+}
+
+.about_flex .about_left {
+  width: 50%;
+}
+
+.about_flex .about_left .bio_table {
+  width: 60%;
+  margin-left: auto;
+}
+
+.about_flex .about_right {
+  width: 50%;
+}
+
+.about_flex .about_right .about_text {
+  width: 60%;
+  margin-left: 2em;
+  margin-right: auto;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+}
+
+.bio {
+  margin-bottom: 1em;
+}
+
+.bio .bio_year {
+  margin-right: 1em;
+}
+
+.sf_about_left {
+  display: none;
+}
+
+.skill {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.skill .lnr {
+  font-size: 100px;
+  color: #606060;
+}
+
+.skill .skill_tabel {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-gap: 16px 4vw;
+}
+
+.skill .skill_content {
+  text-align: center;
+  grid-column: span 4;
+}
+
+.skill .skill_content .skill_caption {
+  margin-bottom: 2em;
+}
+
+.skill .skill_content .skill_text {
+  margin-top: 2em;
+}
+
+.portfolio {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.portfolio .portfolio_table {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-gap: 32px 4vw;
+}
+
+.portfolio .portfolio_content {
+  grid-column: span 4;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.portfolio .portfolio_content .portfolio_text_wrap {
+  width: 100%;
+}
+
+.portfolio .portfolio_content .mb-2 {
+  margin-bottom: 0.2em;
+}
+
+.portfolio .portfolio_content .portfolio_title {
+  font-size: 1em;
+  letter-spacing: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.portfolio .portfolio_content .portfolio_text {
+  line-height: 1.5em;
+}
+
+.portfolio .portfolio_img {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.portfolio .portfolio_img:hover {
+  opacity: 0.7;
+}
+
+.portfolio .portfolio_img img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+  /*　画面サイズ 499pxまで適用　*/
+
+  .about_flex {
+    display: block;
+  }
+
+  .about_flex .about_left {
+    display: none;
+  }
+
+  .about_flex .about_right {
+    width: 100%;
+  }
+
+  .about_flex .about_right .about_text {
+    width: 80%;
+    margin-left: 2em;
+  }
+
+  .sf_about_left {
+    display: block;
+    margin-top: 2em;
+  }
+
+  .sf_about_left .bio_table {
+    width: 80%;
+    margin-left: 2em;
+  }
+
+  .sf_about_left .bio_table span {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  /*　画面サイズ 500pxから999pxまで適用　*/
+}
+
+@media screen and (min-width: 1021px) {
+  /*　画面サイズ 1000px以上から適用　*/
 }
 
