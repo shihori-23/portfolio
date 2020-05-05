@@ -3,7 +3,9 @@ $main_color: #f0e68c;
 $bg_color: #fefefe;
 $text_color: #202020;
 $sub_text_color: #333333;
-$bg_text_color: #ccc376;
+$caption_text_color: #606060;
+$bg_text_color: #999359;
+$border_color: #dddddd;
 
 //　フォントのサイズ
 $title_font_size: 1.2em;
@@ -15,6 +17,7 @@ $breakpoint-tablet: 1024px; /* 変数宣言 */
 $breakpoint-mobile: 640px; /* 変数宣言 */
 
 // アニメーション
+//名前に対するアニメーション
 @keyframes fadein {
     0% {
         opacity: 0;
@@ -27,6 +30,7 @@ $breakpoint-mobile: 640px; /* 変数宣言 */
     }
 }
 
+//　背景に対するアニメーション
 @keyframes fadeinbg {
     0% {
         opacity: 0;
@@ -44,6 +48,37 @@ $breakpoint-mobile: 640px; /* 変数宣言 */
         transform: translateY(0);
     }
 }
+//　背景に対するアニメーション
+@keyframes fadeoutbg {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+//　背景色が変化する際のアニメーション
+@keyframes changebg {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
 @keyframes fadeinscroll {
     0% {
         opacity: 0;
@@ -104,6 +139,19 @@ span {
     font-weight: 300;
 }
 
+a {
+    text-decoration: none;
+    color: $text_color;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.hidden {
+    opacity: 0;
+}
+
 .wrapper {
     position: relative;
     width: 100%;
@@ -149,6 +197,35 @@ span {
     opacity: 0.8;
     animation-name: fadeinbg;
     animation-duration: 4s;
+
+    &.fade_out {
+        animation-name: fadeoutbg;
+        animation-duration: 1s;
+    }
+    &.none {
+        opacity: 0.2;
+    }
+
+    &.bg_about {
+        animation-name: changebg;
+        animation-duration: 1s;
+        background-color: red;
+    }
+    &.bg_skill {
+        animation-name: changebg;
+        animation-duration: 1s;
+        background-color: blue;
+    }
+    &.bg_portfolio {
+        animation-name: changebg;
+        animation-duration: 1s;
+        background-color: green;
+    }
+    &.bg_contact {
+        animation-name: changebg;
+        animation-duration: 1s;
+        background-color: pink;
+    }
 }
 
 .scroll_icon {
@@ -169,7 +246,7 @@ span {
     }
 
     .scroll_text {
-        color: #999359;
+        color: $bg_text_color;
         letter-spacing: 5px;
         font-size: $subtitle_font_size;
         font-weight: 300;
@@ -177,7 +254,7 @@ span {
     }
 
     .lnr-chevron-down {
-        color: #999359;
+        color: $bg_text_color;
         font-size: 30px;
     }
 }
@@ -204,6 +281,10 @@ span {
     top: 0;
     left: 0;
     z-index: 400;
+
+    &.section_bg {
+        // background-color: blue;
+    }
 
     section {
         margin-bottom: 6em;
@@ -261,6 +342,7 @@ span {
             margin-right: auto;
             letter-spacing: 0.05em;
             line-height: 1.5em;
+            text-align: justify;
         }
     }
 }
@@ -283,31 +365,23 @@ span {
     width: 80%;
     margin: 0 auto;
 
+    .skill_title {
+        text-align: center;
+    }
+    .skill_caption {
+        text-align: center;
+    }
+    .skill_icon {
+        text-align: center;
+    }
+
     .lnr {
         font-size: 100px;
         color: #606060;
-        // margin-top: 2em;
-        // margin-bottom: 2em;
     }
 
-    .skill_tabel {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: auto 1fr;
-        grid-gap: 16px 4vw;
-    }
-
-    .skill_content {
-        text-align: center;
-        grid-column: span 4;
-
-        .skill_caption {
-            margin-bottom: 2em;
-        }
-        .skill_text {
-            margin-top: 2em;
-        }
+    .skill_text {
+        text-align: justify;
     }
 }
 
@@ -316,43 +390,23 @@ span {
     width: 80%;
     margin: 0 auto;
 
-    .portfolio_table {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: auto 1fr;
-        grid-gap: 32px 4vw;
+    .portfolio_text_wrap {
+        width: 100%;
+        font-feature-settings: "palt" 1;
     }
 
-    .portfolio_content {
-        grid-column: span 4;
-        width: 90%;
-        margin: 0 auto;
-
-        .portfolio_text_wrap {
-            width: 100%;
-        }
-
-        .mb-2 {
-            margin-bottom: 0.2em;
-        }
-
-        .portfolio_title {
-            font-size: 1em;
-            letter-spacing: 0.25em;
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-        }
-
-        .portfolio_text {
-            line-height: 1.5em;
-        }
+    .mb-2 {
+        margin-bottom: 0.5em;
     }
 
     .portfolio_img {
         width: 100%;
         height: auto;
+        margin-bottom: 0.9em;
         background-color: #fff;
         transition: all 0.3s ease;
+        border: solid 1px $border_color;
+        position: relative;
 
         &:hover {
             opacity: 0.7;
@@ -363,12 +417,82 @@ span {
             height: auto;
             object-fit: contain;
         }
+
+        .hover_box {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            // width: 100%;
+            // height: 100%;
+            opacity: 0;
+            vertical-align: middle;
+            text-align: center;
+
+            &.isvisible {
+                opacity: 0.8;
+                background-color: $main_color;
+            }
+        }
+    }
+
+    .portfolio_title {
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .portfolio_text {
+        text-align: justify;
+        line-height: 1.5em;
+    }
+
+    .chips {
+        text-align: left;
+        color: $caption_text_color;
     }
 }
 
 // CONTACT
+.contact {
+    width: 100%;
+
+    .contact_table {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact_link {
+        margin: 0 3em;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .contact_img {
+        width: 30px;
+        height: auto;
+        transition: all 0.3s ease;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    .lnr-envelope {
+        font-size: 30px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     /*　画面サイズ 499pxまで適用　*/
+    // ABOUT
     .about_flex {
         display: block;
 
@@ -398,10 +522,117 @@ span {
             }
         }
     }
+
+    // SKILL
+    .skill_tabel {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-gap: 16px 4vw;
+    }
+    .skill_content {
+        grid-column: span 12;
+        margin-bottom: 2em;
+    }
+
+    .skill_caption {
+        margin-bottom: 1em;
+    }
+
+    .skill_text {
+        margin: 0 auto;
+        margin-top: 1em;
+        max-width: 240px;
+    }
+    //　PORTFOLIO
+    .portfolio_table {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-gap: 32px 4vw;
+    }
+
+    .portfolio_content {
+        grid-column: span 12;
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1020px) {
     /*　画面サイズ 500pxから999pxまで適用　*/
+    // SKILL
+    .skill_tabel {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-gap: 16px 4vw;
+    }
+
+    .skill_content {
+        grid-column: span 4;
+        margin-bottom: 2em;
+    }
+
+    .skill_caption {
+        margin-bottom: 1em;
+    }
+
+    .skill_text {
+        margin: 0 auto;
+        margin-top: 1em;
+        max-width: 240px;
+    }
+
+    //　PORTFOLIO
+    .portfolio_table {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-gap: 32px 4vw;
+    }
+
+    .portfolio_content {
+        grid-column: span 6;
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 @media screen and (min-width: 1021px) {
     /*　画面サイズ 1000px以上から適用　*/
+    // SKILL
+    .skill_tabel {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-gap: 16px 4vw;
+    }
+
+    .skill_content {
+        grid-column: span 4;
+
+        .skill_caption {
+            margin-bottom: 2em;
+        }
+
+        .skill_text {
+            margin-top: 2em;
+        }
+    }
+
+    //　PORTFOLIO
+    .portfolio_table {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-gap: 32px 4vw;
+    }
+
+    .portfolio_content {
+        grid-column: span 4;
+        width: 90%;
+        margin: 0 auto;
+    }
 }
