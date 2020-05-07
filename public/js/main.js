@@ -82,8 +82,35 @@ $(window).scroll(function() {
 //　ポートフォリオ画像のホバーイベント
 $(function() {
     //マウスを乗せたら発動
-    $("#portfolioImgBox").hover(function() {
-        //マウスを乗せたら色が変わる
+    $("#portfolioImgBox").mouseenter(function() {
         $("#imgHoverBg").addClass("isvisible");
+    });
+    $("#portfolioImgBox").mouseleave(function() {
+        $("#imgHoverBg").removeClass("isvisible");
+    });
+
+    $("#portfolioImgBox2").mouseenter(function() {
+        $("#imgHoverBg2").addClass("isvisible");
+    });
+    $("#portfolioImgBox2").mouseleave(function() {
+        $("#imgHoverBg2").removeClass("isvisible");
+    });
+    $("#portfolioImgBox3").mouseenter(function() {
+        $("#imgHoverBg3").addClass("isvisible");
+    });
+    $("#portfolioImgBox3").mouseleave(function() {
+        $("#imgHoverBg3").removeClass("isvisible");
+    });
+    $("#portfolioImgBox4").mouseenter(function() {
+        $("#imgHoverBg4").addClass("isvisible");
+    });
+    $("#portfolioImgBox4").mouseleave(function() {
+        $("#imgHoverBg4").removeClass("isvisible");
+    });
+    $("#portfolioImgBox5").mouseenter(function() {
+        $("#imgHoverBg5").addClass("isvisible");
+    });
+    $("#portfolioImgBox5").mouseleave(function() {
+        $("#imgHoverBg5").removeClass("isvisible");
     });
 });

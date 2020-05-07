@@ -142,7 +142,9 @@
                             <a href="https://shihori23.sakura.ne.jp/weather/index.html" id="portfolioImgBox">
                             <div class="portfolio_img">
                                 <img src="{{asset('img/otenkil.png')}}">
-                                <div class="hover_box" id="imgHoverBg">More...</div>
+                                <div class="hover_box" id="imgHoverBg">
+                                    <!-- <div class="hover_box_caption">more...</div> -->
+                                </div>
                             </div>
                             
                             </a>
@@ -153,9 +155,12 @@
                             </div>
                         </div>
                         <div class="portfolio_content portfolio_2 wow fadeIn" data-wow-duration="2s" data-wow-offset="300">
-                            <a href="https://github.com/shihori-23/php_hb.git">
+                            <a href="https://github.com/shihori-23/php_hb.git" id="portfolioImgBox2">
                                 <div class="portfolio_img">
                                     <img src="{{asset('img/hairkarte.png')}}">
+                                    <div class="hover_box" id="imgHoverBg2">
+                                        <!-- <div class="hover_box_caption">github</div> -->
+                                    </div>
                                 </div>
                             </a>
                             <div class="portfolio_text_wrap">
@@ -165,9 +170,12 @@
                             </div>
                         </div>
                         <div class="portfolio_content portfolio_3 wow fadeIn" data-wow-duration="2s" data-wow-offset="200">
-                            <a href="https://chumugu.com">
+                            <a href="https://chumugu.com" id="portfolioImgBox3">
                                 <div class="portfolio_img">
                                     <img src="{{asset('img/chumugu.png')}}">
+                                    <div class="hover_box" id="imgHoverBg3">
+                                        <!-- <div class="hover_box_caption">More...</div> -->
+                                    </div>
                                 </div>
                             </a>
                             <div class="portfolio_text_wrap">
@@ -177,9 +185,12 @@
                             </div>
                         </div>
                         <div class="portfolio_content portfolio_4 wow fadeIn" data-wow-duration="2s" data-wow-offset="200">
-                            <a href="https://homeyou.net">
+                            <a href="https://homeyou.net" id="portfolioImgBox4">
                                 <div class="portfolio_img">
                                     <img src="{{asset('img/homeyou.png')}}">
+                                    <div class="hover_box" id="imgHoverBg4">
+                                        <!-- <div class="hover_box_caption">More...</div> -->
+                                    </div>
                                 </div>
                             </a>
                             <div class="portfolio_text_wrap">
@@ -189,9 +200,12 @@
                             </div>
                         </div>
                         <div class="portfolio_content portfolio_5 wow fadeIn" data-wow-duration="2s" data-wow-offset="200">
-                            <a href="https://shihori23.sakura.ne.jp/fashionclue/">
+                            <a href="https://shihori23.sakura.ne.jp/fashionclue/"  id="portfolioImgBox5">
                                 <div class="portfolio_img">
                                     <img src="{{asset('img/clue.png')}}">
+                                    <div class="hover_box" id="imgHoverBg5">
+                                        <!-- <div class="hover_box_caption">More...</div> -->
+                                    </div>
                                 </div>
                             </a>
                             <div class="portfolio_text_wrap">
